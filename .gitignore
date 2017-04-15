@@ -1,0 +1,8 @@
+# folder last project
+dist/
+# bower components
+app/bower_components
+app/css
+# npm modules
+node_modules/
+.idea/
