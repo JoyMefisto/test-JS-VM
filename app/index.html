@@ -6,8 +6,6 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 			crossorigin="anonymous"></script>
-	<!-- build:css css/vendor.css -->
-	<!-- endbuild -->
 
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
 	<!-- build:css css/main.css -->
@@ -16,84 +14,16 @@
 </head>
 <body>
 
+	<audio src="sound/give.mp3" controls id="audio_give" style="display: none; opacity: 0;"></audio>
+	<audio src="sound/product.mp3" controls id="audio_product" style="display: none; opacity: 0;"></audio>
+	<audio src="sound/SQWEEKY.WAV" controls id="audio_add" style="display: none; opacity: 0;"></audio>
+	<audio src="sound/reset.mp3" controls id="audio_reset" style="display: none; opacity: 0;"></audio>
 
-<audio src="sound/give.mp3" controls id="audio_give" style="display: none; opacity: 0;"></audio>
-<audio src="sound/product.mp3" controls id="audio_product" style="display: none; opacity: 0;"></audio>
-<audio src="sound/SQWEEKY.WAV" controls id="audio_add" style="display: none; opacity: 0;"></audio>
-<audio src="sound/reset.mp3" controls id="audio_reset" style="display: none; opacity: 0;"></audio>
+	<div class="main">
 
-<div class="main">
-
-	<div class="dashboard">
-		<div class="dashboardAvatar">
-			<div class="dashboardAvatar__img"></div>
-		</div>
-		<div class="panel panel-default dashboardTable">
-			<table class="table">
-				<thead>
-				<tr>
-					<th>Наименование</th>
-					<th>1 руб</th>
-					<th>2 руб</th>
-					<th>5 руб</th>
-					<th>10 руб</th>
-				</tr>
-				</thead>
-
-				<tbody>
-				<tr>
-					<th>Кол-во монет</th>
-					<td>
-						<span class="glyphicon glyphicon-chevron-down dashboard__credit" data-money="u-add-vm-money"></span>
-						<span id="u-money_1" data-denomination="1">0</span>
-						<span class="glyphicon glyphicon-plus dashboard__plus" data-money="u-add-money"></span>
-					</td>
-					<td>
-						<span class="glyphicon glyphicon-chevron-down dashboard__credit" data-money="u-add-vm-money"></span>
-						<span id="u-money_2" data-denomination="2">0</span>
-						<span class="glyphicon glyphicon-plus dashboard__plus" data-money="u-add-money"></span>
-					</td>
-					<td>
-						<span class="glyphicon glyphicon-chevron-down dashboard__credit" data-money="u-add-vm-money"></span>
-						<span id="u-money_3" data-denomination="5">0</span>
-						<span class="glyphicon glyphicon-plus dashboard__plus" data-money="u-add-money"></span>
-					</td>
-					<td>
-						<span class="glyphicon glyphicon-chevron-down dashboard__credit" data-money="u-add-vm-money"></span>
-						<span id="u-money_4" data-denomination="10">0</span>
-						<span class="glyphicon glyphicon-plus dashboard__plus" data-money="u-add-money"></span>
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-
-	<div class="vm">
-		<h2 class="vm__title">Vending Machine</h2>
-		<hr class="vm__line">
-
-		<div class="panel panel-default">
-			<table class="table" id="vm_body">
-				<thead>
-					<tr>
-						<th>Товар</th>
-						<th>Стоимость</th>
-						<th>Остаток</th>
-						<th>Купить</th>
-					</tr>
-				</thead>
-			</table>
-		</div>
-		<div class="well">Внесённая сумма <span id="total_vm"></span> рублей</div>
-		<button type="button" class="btn btn-danger" id="surrender">Сдача</button>
-
-		<hr class="vm__line">
-
-		<div class="alert alert-info" role="alert" id="vm-info">Ожидание...</div>
 		<div class="dashboard">
 			<div class="dashboardAvatar">
-				<div class="dashboardAvatar__img dashboardAvatar__img_vm"></div>
+				<div class="dashboardAvatar__img"></div>
 			</div>
 			<div class="panel panel-default dashboardTable">
 				<table class="table">
@@ -110,21 +40,85 @@
 					<tbody>
 					<tr>
 						<th>Кол-во монет</th>
-						<td id="vm-money_1">0</td>
-						<td id="vm-money_2">0</td>
-						<td id="vm-money_3">0</td>
-						<td id="vm-money_4">0</td>
+						<td>
+							<span class="glyphicon glyphicon-chevron-down dashboard__credit" data-money="u-add-vm-money"></span>
+							<span id="u-money_1" data-denomination="1">0</span>
+							<span class="glyphicon glyphicon-plus dashboard__plus" data-money="u-add-money"></span>
+						</td>
+						<td>
+							<span class="glyphicon glyphicon-chevron-down dashboard__credit" data-money="u-add-vm-money"></span>
+							<span id="u-money_2" data-denomination="2">0</span>
+							<span class="glyphicon glyphicon-plus dashboard__plus" data-money="u-add-money"></span>
+						</td>
+						<td>
+							<span class="glyphicon glyphicon-chevron-down dashboard__credit" data-money="u-add-vm-money"></span>
+							<span id="u-money_3" data-denomination="5">0</span>
+							<span class="glyphicon glyphicon-plus dashboard__plus" data-money="u-add-money"></span>
+						</td>
+						<td>
+							<span class="glyphicon glyphicon-chevron-down dashboard__credit" data-money="u-add-vm-money"></span>
+							<span id="u-money_4" data-denomination="10">0</span>
+							<span class="glyphicon glyphicon-plus dashboard__plus" data-money="u-add-money"></span>
+						</td>
 					</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
 
-	</div>
-</div>
+		<div class="vm">
+			<h2 class="vm__title">Vending Machine</h2>
+			<hr class="vm__line">
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- endbuild -->
+			<div class="panel panel-default">
+				<table class="table" id="vm_body">
+					<thead>
+						<tr>
+							<th>Товар</th>
+							<th>Стоимость</th>
+							<th>Остаток</th>
+							<th>Купить</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="well">Внесённая сумма <span id="total_vm"></span> рублей</div>
+			<button type="button" class="btn btn-danger" id="surrender">Сдача</button>
+
+			<hr class="vm__line">
+
+			<div class="alert alert-info" role="alert" id="vm-info">Ожидание...</div>
+			<div class="dashboard">
+				<div class="dashboardAvatar">
+					<div class="dashboardAvatar__img dashboardAvatar__img_vm"></div>
+				</div>
+				<div class="panel panel-default dashboardTable">
+					<table class="table">
+						<thead>
+						<tr>
+							<th>Наименование</th>
+							<th>1 руб</th>
+							<th>2 руб</th>
+							<th>5 руб</th>
+							<th>10 руб</th>
+						</tr>
+						</thead>
+
+						<tbody>
+						<tr>
+							<th>Кол-во монет</th>
+							<td id="vm-money_1">0</td>
+							<td id="vm-money_2">0</td>
+							<td id="vm-money_3">0</td>
+							<td id="vm-money_4">0</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+		</div>
+	</div>
 
     <!-- build:js scripts/main.js -->
 	<script src="js/numberMoney.js"></script>

@@ -59,7 +59,7 @@ function NumberMoney(config) {
             return num;
         }
     };
-
+// Сдача от VM
     function surrender(sum) {
         if(sum == 0) return false;
 
@@ -92,59 +92,3 @@ function NumberMoney(config) {
         surrender: surrender
     }
 };
-
-
-//
-// let numberMoney = {
-//
-//     addUserMoney: function(num) {
-//         numberMoney.data['money_'+num] += 1;
-//     },
-//
-//     renderUserMoney: function() {
-//         $(this.data.money_block_1).html(numberMoney.data.money_1);
-//         $(this.data.money_block_2).html(numberMoney.data.money_2);
-//         $(this.data.money_block_3).html(numberMoney.data.money_5);
-//         $(this.data.money_block_4).html(numberMoney.data.money_10);
-//     },
-//
-//     renderVMMoney: function () {
-//         $(this.data.vm_money_block_1).html(numberMoney.data.vm_money_1);
-//         $(this.data.vm_money_block_2).html(numberMoney.data.vm_money_2);
-//         $(this.data.vm_money_block_3).html(numberMoney.data.vm_money_5);
-//         $(this.data.vm_money_block_4).html(numberMoney.data.vm_money_10);
-//     },
-//
-//     addVMMoney: function (num) {
-//         if(numberMoney.data['money_'+num] != 0) {
-//             numberMoney.data['money_'+num] -= 1;
-//             numberMoney.data['vm_money_'+num] += 1;
-//
-//             return num;
-//         }
-//     },
-//
-//     surrender: function (sum) {
-//         if(sum == 0) return false;
-//
-//         let summ = sum, one, two, five, ten;
-//
-//         ten = Math.floor(summ / 10);
-//         summ = summ % 10;
-//         five = Math.floor(summ / 5);
-//         summ = summ % 5;
-//         two = Math.floor(summ / 2);
-//         summ = summ % 2;
-//         one = Math.floor(summ / 1);
-//
-//         numberMoney.data.vm_money_10 -= ten;
-//         numberMoney.data.vm_money_5 -= five;
-//         numberMoney.data.vm_money_2 -= two;
-//         numberMoney.data.vm_money_1 -= one;
-//
-//         numberMoney.data.money_10 += ten;
-//         numberMoney.data.money_5 += five;
-//         numberMoney.data.money_2 += two;
-//         numberMoney.data.money_1 += one;
-//     }
-// };
