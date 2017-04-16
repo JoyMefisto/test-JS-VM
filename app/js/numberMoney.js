@@ -3,15 +3,15 @@
 let numberMoneyConfiguration = {
 // Количество монет определённого наминала для User
     money_1: 10,
-    money_2: 20,
+    money_2: 30,
     money_5: 20,
     money_10: 15,
 
 // Количество монет определённого наминала для VM
-    vm_money_1: 10,
-    vm_money_2: 30,
-    vm_money_5: 20,
-    vm_money_10: 15,
+    vm_money_1: 100,
+    vm_money_2: 100,
+    vm_money_5: 100,
+    vm_money_10: 100,
 
 // Dashboard с количеством монет для User
     money_block_1: "#u-money_1",
